@@ -91,6 +91,9 @@ public class HidePlayerOnCollision : MonoBehaviour
         if (this.tag != "Ground")
         {
             Scription.instance.Turnon();
+
+            // 파괴하기 전에 부모 관계 해제
+            transform.SetParent(null);
         }
 
         //user input 1 end

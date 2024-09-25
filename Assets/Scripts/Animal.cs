@@ -11,17 +11,11 @@ public class Animal : MonoBehaviour
     {
         // 인벤토리에 아이템 추가
         Inventory.instance.AddItem(bebsae);
-
-        // 파괴하기 전에 부모 관계 해제
-        transform.SetParent(null);
     }
     public void Dam()
     {
         // 인벤토리에 아이템 추가
         Inventory.instance.AddItem(dambe);
-
-        // 파괴하기 전에 부모 관계 해제
-        transform.SetParent(null);
     }
 
     void Start()
