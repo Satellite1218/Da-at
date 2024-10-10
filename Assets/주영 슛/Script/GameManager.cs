@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Ball ball;
     public Trajectory trajectory;
     public GameObject gun; // 총 객체 추가
+    public player playerScript; // Player 스크립트 참조
     [SerializeField] float pushForce = 4f;
 
     // 드래그 가능한 범위를 정의하는 변수
@@ -81,11 +82,14 @@ public class GameManager : MonoBehaviour
         ball.DeactivateRb(); // 드래그 시작할 때 공을 비활성화
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
 
+        playerScript.Stop();  // 플레이어 멈추기
+
         trajectory.Show();
     }
 
     void OnDrag()
     {
+
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         distance = Vector2.Distance(startPoint, endPoint);
 
@@ -109,6 +113,8 @@ public class GameManager : MonoBehaviour
         ball.Push(force);
 
         trajectory.Hide();
+
+        playerScript.Go();  // 플레이어 이동 재개
     }
 
     void UpdateGunRotationDuringDrag()

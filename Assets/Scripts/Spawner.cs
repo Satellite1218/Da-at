@@ -5,10 +5,10 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public static Spawner instance;
-    public Transform[] spawnPoints;
-    public Transform[] groundPoints;
-    public GameObject[] fly_prefabs;
-    public GameObject[] ground_prefabs;
+    public Transform[] spawnPoints;   // Inspector에서 할당해야 함
+    public Transform[] groundPoints;  // Inspector에서 할당해야 함
+    public GameObject[] fly_prefabs;  // Inspector에서 할당해야 함
+    public GameObject[] ground_prefabs; // Inspector에서 할당해야 함
 
     void Awake()
     {
@@ -27,11 +27,14 @@ public class Spawner : MonoBehaviour
     {
         spawnPoints = FilterPoints(spawnPoints);
         groundPoints = FilterPoints(groundPoints);
+
+        Fly_Spawn();
+        Ground_Spawn();
     }
 
     void Update()
     {
-        //테스트 하려고 만들어둔거임
+        // 테스트를 위한 코드
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Fly_Spawn();
@@ -44,7 +47,13 @@ public class Spawner : MonoBehaviour
 
     public void Fly_Spawn()
     {
-        if (fly_prefabs.Length == 0 || spawnPoints.Length == 0) return;
+        // fly_prefabs 또는 spawnPoints가 null이거나 배열이 비어있을 경우 리턴
+        if (fly_prefabs == null || fly_prefabs.Length == 0 || spawnPoints == null || spawnPoints.Length == 0)
+        {
+            Debug.LogError("Fly 프리팹 또는 스폰 지점이 설정되지 않았습니다.");
+            return;
+        }
+
         Debug.Log("flyload");
 
         int randomPrefabIndex = Random.Range(0, fly_prefabs.Length);
@@ -58,7 +67,13 @@ public class Spawner : MonoBehaviour
 
     public void Ground_Spawn()
     {
-        if (ground_prefabs.Length == 0 || groundPoints.Length == 0) return;
+        // ground_prefabs 또는 groundPoints가 null이거나 배열이 비어있을 경우 리턴
+        if (ground_prefabs == null || ground_prefabs.Length == 0 || groundPoints == null || groundPoints.Length == 0)
+        {
+            Debug.LogError("Ground 프리팹 또는 스폰 지점이 설정되지 않았습니다.");
+            return;
+        }
+
         Debug.Log("groundload");
 
         int randomPrefabIndex = Random.Range(0, ground_prefabs.Length);

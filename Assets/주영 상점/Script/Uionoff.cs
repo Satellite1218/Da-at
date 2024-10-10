@@ -1,33 +1,37 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Uionoff : MonoBehaviour
 {
     // Canvas 오브젝트를 할당할 변수
     public GameObject shopCanvas;
 
-    // Shop 스프라이트 오브젝트를 할당할 변수
-    public GameObject shopSprite;
+    // 상점 버튼을 할당할 변수
+    public Button shopButton;
+
+    // 닫기 버튼을 할당할 변수
+    public Button closeButton;
 
     void Start()
     {
         // 시작할 때 Canvas를 비활성화 상태로 설정
         shopCanvas.SetActive(false);
+
+        // 버튼 클릭 이벤트 등록
+        shopButton.onClick.AddListener(OpenShop);
+        closeButton.onClick.AddListener(CloseShop);
     }
 
-    void Update()
+    // 상점을 여는 함수
+    void OpenShop()
     {
-        // 마우스 클릭을 감지
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 rayPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(rayPos), Vector2.zero);
+        shopCanvas.SetActive(true);
+    }
 
-            if (hit && hit.transform.gameObject == shopSprite)
-            {
-                // Shop 스프라이트를 클릭했을 때 Canvas를 활성화
-                shopCanvas.SetActive(true);
-            }
-        }
+    // 상점을 닫는 함수
+    void CloseShop()
+    {
+        shopCanvas.SetActive(false);
     }
 
     void OnApplicationQuit()

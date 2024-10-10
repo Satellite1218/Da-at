@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class player : MonoBehaviour
@@ -9,7 +7,7 @@ public class player : MonoBehaviour
     private bool MoveForward = true; // 앞으로 이동 가능 여부
     private bool MoveBack = true; // 뒤로 이동 가능 여부
     Animator anim;
-        
+
     // Start는 첫 프레임 업데이트 전에 호출됩니다.
     private void Start()
     {
@@ -19,6 +17,7 @@ public class player : MonoBehaviour
 
     public void Move()
     {
+        if (!MoveForward && !MoveBack) return; // 이동 가능 여부를 체크
         float speed = Time.deltaTime * 5f;
 
         if (Input.GetKey(KeyCode.LeftArrow) && MoveBack)
@@ -58,7 +57,7 @@ public class player : MonoBehaviour
         {
             ChangeR();
         }
-        else
+        else if (MoveForward != false && MoveBack != false)
         {
             Move();
         }
@@ -70,6 +69,11 @@ public class player : MonoBehaviour
     }
     public void BackStop()
     {
+        MoveBack = false; // 뒤로 이동 불가 설정
+    }
+    public void Stop()
+    {
+        MoveForward = false; // 앞으로 이동 불가 설정
         MoveBack = false; // 뒤로 이동 불가 설정
     }
     public void Go()

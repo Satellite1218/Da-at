@@ -31,20 +31,27 @@ public class Distance : MonoBehaviour
     {
         if (targetObject == null || playerScript == null) return;
 
-        // 지난 프레임 이후 이동한 거리 계산
+        // 현재 위치와 이전 위치 사이의 거리 계산 (x축만)
         float distanceMoved = targetObject.transform.position.x - previousPosition.x;
 
-        // 이동한 거리를 총 이동 거리에 더함
-        totalDistance += distanceMoved;
+        // 오른쪽으로 이동 중이면 거리를 더하고, 왼쪽으로 이동 중이면 거리를 감소시킴
+        if (distanceMoved > 0)
+        {
+            totalDistance += distanceMoved; // 오른쪽 이동 -> 거리 증가
+        }
+        else if (distanceMoved < 0)
+        {
+            totalDistance += distanceMoved; // 왼쪽 이동 -> 거리 감소
+        }
 
         // 이전 위치 업데이트
         previousPosition = targetObject.transform.position;
 
         // 총 이동 거리를 정수로 반올림하여 UI Text에 업데이트
-        distanceText.text = "이동 거리 : " + Mathf.RoundToInt(totalDistance) / 2 + "m";
+        distanceText.text = "이동 거리 : " + Mathf.RoundToInt(totalDistance) + "m";
 
         // 총 이동 거리가 70 이상이면 앞으로 가는 것을 멈춤
-        if (totalDistance >= 70)
+        if (totalDistance >= 200)
         {
             playerScript.GoStop();
             distanceText.text = "이동 거리 : 거리초과"; // UI에 이동 멈춤 표시

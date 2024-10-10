@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7940358581852881442}
   - component: {fileID: 6447303027038797482}
+  - component: {fileID: 4527544693529112898}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.26000005, y: 0, z: 0}
-  m_LocalScale: {x: 1.2926, y: 1.2926, z: 1.2926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e0ab66ecff5e6d41a69cc16905628eb, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 42058158edf85e0419ffd2afc581350e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4527544693529112898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070335348601567717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a8ebde8a6c519409508e971af41924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  externalObject: {fileID: 5070335348601567717}
+  sprites:
+  - {fileID: 21300000, guid: 42058158edf85e0419ffd2afc581350e, type: 3}
+  - {fileID: 21300000, guid: 60ca09b1489445d43a1c839f23566412, type: 3}
+  - {fileID: 21300000, guid: d8fddc1c477ac5a42ba9399312af713b, type: 3}
+  - {fileID: 21300000, guid: 7bc82be625c40f8409f386028f662abd, type: 3}
+  - {fileID: 21300000, guid: 3095d0122f3de0842b0f062a2b723bab, type: 3}
