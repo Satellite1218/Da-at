@@ -22,6 +22,10 @@ TagManager:
   - Glassmonkey
   - Coyote
   - MangCong
+  - Negul
+  - Gorani
+  - Frogbird
+  - Bear
   layers:
   - Default
   - TransparentFX

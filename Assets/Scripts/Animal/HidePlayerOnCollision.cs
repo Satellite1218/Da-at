@@ -74,109 +74,61 @@ public class HidePlayerOnCollision : MonoBehaviour
         switch (this.tag)
         {
             case "Sarg":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(0);
-                }
+                animal.Ani(0);
                 break;
             case "Bebsae":
-                isfly = true;
-                if (animal != null)
-                {
-                    animal.Ani(1);
-                }
+                animal.Ani(1);
                 break;
             case "Fox":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(2);
-                }
+                animal.Ani(2);
                 break;
             case "Dambe":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(3);
-                }
+                animal.Ani(3);
                 break;
             case "Quokka":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(4);
-                }
+                animal.Ani(4);
                 break;
             case "MangCong":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(5);
-                }
+                animal.Ani(5);
                 break;
             case "Namsang":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(6);
-                }
+                animal.Ani(6);
                 break;
             case "Bat":
-                isfly = true;
-                if (animal != null)
-                {
-                    animal.Ani(7);
-                }
+                animal.Ani(7);
                 break;
             case "Osori":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(8);
-                }
+                animal.Ani(8);
                 break;
             case "Goat":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(9);
-                }
+                animal.Ani(9);
                 break;
             case "Bigbard":
-                isfly = true;
-                if (animal != null)
-                {
-                    animal.Ani(10);
-                }
+                animal.Ani(10);
                 break;
             case "Therebird":
-                isfly = true;
-                if (animal != null)
-                {
-                    animal.Ani(11);
-                }
+                animal.Ani(11);
                 break;
             case "Pigeon":
-                isfly = true;
-                if (animal != null)
-                {
-                    animal.Ani(12);
-                }
+                animal.Ani(12);
                 break;
             case "Glassmonkey":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(13);
-                }
+                animal.Ani(13);
                 break;
             case "Coyote":
-                isfly = false;
-                if (animal != null)
-                {
-                    animal.Ani(14);
-                }
+                animal.Ani(14);
+                break;
+            case "Negul":
+                animal.Ani(15);
+                break;
+            case "Gorani":
+                animal.Ani(16);
+                break;
+            case "Frogbird":
+                animal.Ani(17);
+                break;
+            case "Bear":
+                animal.Ani(18);
                 break;
             default:
                 break;

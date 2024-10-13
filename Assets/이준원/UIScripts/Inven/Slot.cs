@@ -15,6 +15,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public void UpdateSlotUI()
     {
         itemIcon.sprite = item.itemImage;
+        itemIcon.preserveAspect = true; // 이미지 비율을 유지하게 설정
         itemIcon.gameObject.SetActive(true);
     }
 

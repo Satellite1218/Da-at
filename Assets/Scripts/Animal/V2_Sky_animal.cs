@@ -10,7 +10,7 @@ public class sky_animal1 : MonoBehaviour
     void Start()
     {
         Vector3 newPosition = transform.position;
-        newPosition.y = 3f;  // 초기 y 위치 설정
+        newPosition.y = 1.2f;  // 초기 y 위치 설정
         transform.position = newPosition;
 
         // "Area"라는 이름의 오브젝트를 찾아 Collider2D를 할당
@@ -53,16 +53,6 @@ public class sky_animal1 : MonoBehaviour
             else if (transform.position.x < Area.bounds.min.x)
             {
                 newPosition.x = Area.bounds.max.x;
-            }
-
-            // y축 위치를 반대쪽으로 이동
-            if (transform.position.y > Area.bounds.max.y)
-            {
-                newPosition.y = Area.bounds.min.y;
-            }
-            else if (transform.position.y < Area.bounds.min.y)
-            {
-                newPosition.y = Area.bounds.max.y;
             }
 
             // 새 위치로 설정
