@@ -147,24 +147,19 @@ public class V1_Sky_animal : MonoBehaviour
 
             if (transform.position.x > Area.bounds.max.x)
             {
-                newPosition.x = Area.bounds.min.x;
+                // 일정 시간 대기 후 Fly_Spawn 호출 및 오브젝트 파괴
+                Respawn();
             }
             else if (transform.position.x < Area.bounds.min.x)
             {
-                newPosition.x = Area.bounds.max.x;
+                // 일정 시간 대기 후 Fly_Spawn 호출 및 오브젝트 파괴
+                Respawn();
             }
-
-            if (transform.position.y > Area.bounds.max.y)
-            {
-                newPosition.y = Area.bounds.min.y;
-            }
-            else if (transform.position.y < Area.bounds.min.y)
-            {
-                newPosition.y = Area.bounds.max.y;
-            }
-
-            transform.position = newPosition;
         }
     }
-
+    void Respawn()
+    {
+        Spawner.instance.Fly_Spawn();  // 새 오브젝트 스폰
+        Destroy(gameObject);  // 오브젝트 파괴
+    }
 }

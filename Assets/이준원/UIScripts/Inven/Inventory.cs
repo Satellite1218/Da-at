@@ -113,7 +113,7 @@ public class Inventory : MonoBehaviour
 
         // 가장 최근에 추가된 아이템의 이미지를 가져와서 UI에 표시
         itemIcon.sprite = items[items.Count - 1].itemImage;
-        itemIcon.preserveAspect = true; // 이미지 비율을 유지하게 설정
+        itemIcon.preserveAspect = true; // 이미지 비율을 유지하도록 설정
         itemIcon.gameObject.SetActive(true); // 아이콘 활성화
 
         // 가장 최근에 추가된 아이템의 이름을 가져와서 UI에 표시
@@ -124,8 +124,8 @@ public class Inventory : MonoBehaviour
         itemPriceText.text = items[items.Count - 1].price.ToString() + "원";
         itemPriceText.gameObject.SetActive(true); // 가격 텍스트 활성화
 
-        // 가장 최근에 추가된 아이템의 설명을 가져와서 UI에 표시
+        // 가장 최근에 추가된 아이템의 가격을 가져와서 UI에 표시
         itemDescriptText.text = items[items.Count - 1].itemText;
-        itemDescriptText.gameObject.SetActive(true); // 설명 텍스트 활성화
+        itemDescriptText.gameObject.SetActive(true); // 가격 텍스트 활성화
     }
 }

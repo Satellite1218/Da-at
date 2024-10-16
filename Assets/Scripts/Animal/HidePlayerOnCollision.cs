@@ -5,7 +5,7 @@ public class HidePlayerOnCollision : MonoBehaviour
 {
     public bool bActive = true; // 활성 상태 추적
     public Material newMaterial; // 다른 매터리얼을 설정
-    public Sig sigInstance; // Sig 클래스 인스턴스 참조
+    // public Sig sigInstance; // Sig 클래스 인스턴스 참조
     public GameObject gunObject;
     public bool isfly;
     private Renderer objectRenderer;
@@ -51,10 +51,10 @@ public class HidePlayerOnCollision : MonoBehaviour
         Rigidbody2D objRigidbody = obj.GetComponent<Rigidbody2D>();
 
         // 객체를 비활성화하기 전에 Sig 클래스의 Reloadingcome 함수 호출
-        if (sigInstance != null)
+        /*if (sigInstance != null)
         {
             sigInstance.Reloadingcome(true);
-        }
+        }*/
 
         // 객체를 비활성화
         obj.SetActive(false);
@@ -160,10 +160,10 @@ public class HidePlayerOnCollision : MonoBehaviour
         }
 
         // Sig 클래스의 Reloadingcome 함수 호출
-        if (sigInstance != null)
+        /*if (sigInstance != null)
         {
             sigInstance.Reloadingcome(false);
-        }
+        }*/
 
         bActive = true; // 활성 상태 업데이트
 

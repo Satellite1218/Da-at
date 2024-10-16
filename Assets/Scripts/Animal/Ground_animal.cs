@@ -58,8 +58,10 @@ public class Ground_animal : MonoBehaviour
     {
         if (!isRunning) // 이동 중이 아닐 때만 실행
         {
-            transform.position = new Vector3(-3f, -3.4f, 0f);
-            StartCoroutine(Run(10f, 25f));
+            // 본래 y축 값을 유지하면서 x축만 변경
+            float originalY = transform.position.y;
+            transform.position = new Vector3(-3f, originalY, 0f);
+            StartCoroutine(Run(15f, 25f));
         }
     }
 
@@ -67,8 +69,10 @@ public class Ground_animal : MonoBehaviour
     {
         if (!isRunning) // 이동 중이 아닐 때만 실행
         {
-            transform.position = new Vector3(77f, -3.4f, 0f);
-            StartCoroutine(Run(-10f, -25f));
+            // 본래 y축 값을 유지하면서 x축만 변경
+            float originalY = transform.position.y;
+            transform.position = new Vector3(77f, originalY, 0f);
+            StartCoroutine(Run(-15f, -25f));
         }
     }
 
@@ -98,7 +102,7 @@ public class Ground_animal : MonoBehaviour
             {
                 ChangeL();
             }
-            else if (transform.position.x > 45)
+            else if (transform.position.x > 80)
             {
                 ChangeR();
             }

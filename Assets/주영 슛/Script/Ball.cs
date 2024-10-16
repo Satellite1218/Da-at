@@ -37,6 +37,8 @@ public class Ball : MonoBehaviour
 
         // 공이 날아가는 순간 스프라이트 변경
         StartCoroutine(ChangeSprites());
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.money);
     }
 
     private void RotateSpriteToMatchDirection()

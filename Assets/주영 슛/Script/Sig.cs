@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections; // IEnumerator를 포함한 네임스페이스
 using System.Collections.Generic; // 컬렉션을 사용하는 경우 필요
 
@@ -15,18 +15,18 @@ public class Sig : MonoBehaviour
         reloading = value;
         if (reloading)
         {
-            //if (targetObject != null && targetObject.activeInHierarchy)
-            //{
-            //    if (!isCoroutineRunning) // 코루틴이 실행 중이지 않을 때만 실행
-            //    {
-            //        targetObject.SetActive(true);
-            //        StartCoroutine(RotateForSeconds(targetObject, 4f));
-            //    }
-            //}
-            //else
-            //{
-            //    Debug.LogError("TargetObject가 활성화되어 있지 않아서 코루틴을 실행할 수 없습니다.");
-            //}
+            if (targetObject != null && targetObject.activeInHierarchy)
+            {
+                if (!isCoroutineRunning) // 코루틴이 실행 중이지 않을 때만 실행
+                {
+                    targetObject.SetActive(true);
+                    StartCoroutine(RotateForSeconds(targetObject, 4f));
+                }
+            }
+            else
+            {
+                Debug.LogError("TargetObject가 활성화되어 있지 않아서 코루틴을 실행할 수 없습니다.");
+            }
         }
         Debug.Log($"Reloadingcome called, reloading set to {value}");
     }
@@ -50,3 +50,4 @@ public class Sig : MonoBehaviour
         isCoroutineRunning = false;
     }
 }
+*/

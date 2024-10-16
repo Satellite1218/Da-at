@@ -13,6 +13,7 @@ public class Change : MonoBehaviour
 
             if (renderer != null && NewMaterial != null)
             {
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.genButton3);
                 renderer.material = NewMaterial; // 새로운 재질로 변경합니다
                 Debug.Log("재질변경");
             }

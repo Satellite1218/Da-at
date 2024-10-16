@@ -23,7 +23,7 @@ public class player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) && MoveBack)
         {
             anim.SetBool("Isrunning", true);
-            transform.Translate(-Vector2.right * speed);
+            transform.Translate(-Vector2.right * speed / 2);
         }
         else if (Input.GetKey(KeyCode.RightArrow) && MoveForward)
         {
@@ -38,7 +38,7 @@ public class player : MonoBehaviour
 
     void ChangeR()
     {
-        transform.position = new Vector3(-10f, -2.2f, 0);
+        transform.position = new Vector3(-5f, -2.2f, 0);
     }
 
     void ChangeL()
@@ -53,7 +53,7 @@ public class player : MonoBehaviour
         {
             ChangeL();
         }
-        else if (transform.position.x > 45)
+        else if (transform.position.x > 80)
         {
             ChangeR();
         }
@@ -65,14 +65,17 @@ public class player : MonoBehaviour
 
     public void GoStop()
     {
+        anim.SetBool("Isrunning", false);
         MoveForward = false; // 앞으로 이동 불가 설정
     }
     public void BackStop()
     {
+        anim.SetBool("Isrunning", false);
         MoveBack = false; // 뒤로 이동 불가 설정
     }
     public void Stop()
     {
+        anim.SetBool("Isrunning", false);
         MoveForward = false; // 앞으로 이동 불가 설정
         MoveBack = false; // 뒤로 이동 불가 설정
     }

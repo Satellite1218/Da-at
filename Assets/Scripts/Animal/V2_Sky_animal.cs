@@ -48,15 +48,19 @@ public class sky_animal1 : MonoBehaviour
             // x축 위치를 반대쪽으로 이동
             if (transform.position.x > Area.bounds.max.x)
             {
-                newPosition.x = Area.bounds.min.x;
+                // 일정 시간 대기 후 Fly_Spawn 호출 및 오브젝트 파괴
+                Respawn();
             }
             else if (transform.position.x < Area.bounds.min.x)
             {
-                newPosition.x = Area.bounds.max.x;
+                // 일정 시간 대기 후 Fly_Spawn 호출 및 오브젝트 파괴
+                Respawn();
             }
-
-            // 새 위치로 설정
-            transform.position = newPosition;
         }
+    }
+    void Respawn()
+    {
+        Spawner.instance.Fly_Spawn();  // 새 오브젝트 스폰
+        Destroy(gameObject);  // 오브젝트 파괴
     }
 }

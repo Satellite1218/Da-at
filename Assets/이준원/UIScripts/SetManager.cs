@@ -33,6 +33,8 @@ public class SetManager : MonoBehaviour
         InventoryPanel = GameObject.Find("UICanvas");
 
         StartCoroutine(LoadSceneAndFindShelterPanel("AnimalShelter"));
+
+        AudioManager.instance.PlayBgm(true);
     }
 
     IEnumerator LoadSceneAndFindShelterPanel(string sceneName)

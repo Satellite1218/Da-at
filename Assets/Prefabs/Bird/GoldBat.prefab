@@ -201,4 +201,4 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8, y: 0.7}
-  m_Direction: 1
+  m_Direction: 0
